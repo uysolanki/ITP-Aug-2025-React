@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script src="script1.js"></script> -->
+
+
+    <script>
+       let player1={
+            jno:18,                 
+            
+            avg : function test()
+                            {
+                              this.jno++;
+                              console.log(this.jno)
+                            }
+        }
+
+        player1.avg();
+
+
+         let player2={
+            jno:45,                 
+            
+            avg : ()=>{
+                              jno=100
+                              this.jno++;
+                              console.log(this.jno)  //101
+                            }
+        }
+
+        player2.avg();
+
+</script>
+</body>
+</html>

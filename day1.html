@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script src="script1.js"></script> -->
+
+
+    <script>
+       let player1={
+            jno:18,                 //number as a value
+            pname: 'Virat',         //string as a value
+            trophies:['IPL','CT','AC','CWC','T20iWC'],  //object as a value
+            mp:100,
+            rs:5000,
+
+            avg : function calcAverage()
+                            {
+                                console.log(this.rs/this.mp)
+                            }
+        }
+
+        player1.avg();
+
+
+         let player2={
+            jno:18,                 //number as a value
+            pname: 'Rohil',         //string as a value
+            trophies:['IPL','CT','AC','CWC','T20iWC'],  //object as a value
+            mp:100,
+            rs:4000,
+
+            avg : ()=>{
+                                mp=100;
+                                rs=3000
+                                let ans=this.rs/this.mp
+                                console.log(ans)
+                                if(true)
+                                {
+                                     mp=100;
+                                     rs=1000
+                                    let ans=this.rs/this.mp
+                                    console.log(ans)
+                                }
+                    }
+        }
+
+        player2.avg();
+    </script>
+</body>
+</html>

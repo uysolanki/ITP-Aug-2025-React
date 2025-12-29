@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create & Remove</title>
+</head>
+<body>
+
+    <input id="task" placeholder="Enter task" />
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="tasks"></ul>
+
+    <script>
+    function addTask() {
+        const taskInput = document.getElementById("task");
+        const taskText = taskInput.value.trim();
+
+        // ❌ prevent empty input
+        if (taskText === "") {
+            alert("Please enter a task");
+            return;
+        }
+
+        const tasksList = document.getElementById("tasks");
+        const existingTasks = tasksList.getElementsByTagName("li");
+
+        // 🔍 check duplicates
+        for (let li of existingTasks) {
+            if (li.firstChild.nodeValue === taskText) {
+                alert("Task already exists!");
+                taskInput.value = "";
+                return;
+            }
+        }
+
+        // ✅ create li
+        const li = document.createElement("li");
+        li.innerText = taskText;
+
+        // delete button
+        const btn = document.createElement("button");
+        btn.innerText = "❌";
+
+        li.appendChild(btn);
+        tasksList.appendChild(li);
+
+        // clear input
+        taskInput.value = "";
+
+        // delete logic
+        btn.onclick = function () {
+            li.remove();
+        };
+    }
+</script>
+
+
+</body>
+</html>

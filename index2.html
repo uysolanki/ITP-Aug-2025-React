@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create & Remove</title>
+</head>
+<body>
+
+    <input id="task" placeholder="Enter task" />
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="tasks"></ul>
+
+    <script>
+        function addTask() {
+            const taskText = document.getElementById("task").value;
+
+            const li = document.createElement("li");
+            li.innerText = taskText;
+
+            // create delete button
+            const btn = document.createElement("button");
+            btn.innerText = "❌";
+
+            li.appendChild(btn);
+            document.getElementById("tasks").appendChild(li);
+
+            document.getElementById("task").value = "";
+
+            
+            btn.onclick = function () {
+                li.remove();
+            };
+
+            
+        }
+    </script>
+
+</body>
+</html>

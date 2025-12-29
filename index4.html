@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create & Remove</title>
+</head>
+<body>
+
+    <li id="one">Buy Milk<button>❌</button></li>
+    <script>
+    
+    const liElement=document.getElementById("one")														  
+												
+    console.log(liElement.childNodes[0]) // Text node ("Buy Milk")
+    console.log(liElement.childNodes[1]) // <button>❌</button>
+
+    console.log(   liElement.childNodes[0].nodeType) // 3
+    console.log(   liElement.childNodes[1].nodeType) // 1
+
+    const attrNode = liElement.getAttributeNode("id");
+    console.log(attrNode)
+    </script>
+
+
+</body>
+</html>
