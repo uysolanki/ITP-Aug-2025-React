@@ -2,8 +2,6 @@ import React from 'react'
 import cars from '../data/cars.js'
 const Demo = () => {
 
-
-
 const bat="Virat"
 const bowl="Bumrah"
 const capt="Rohit"
@@ -19,7 +17,7 @@ console.log(olElement)
     return (
     <div>
         {cars.map(
-            (car)=>(<li>{car}</li>)
+            (car,index)=>(<li key={index}>{car}</li>)
         )}
     </div>
   )

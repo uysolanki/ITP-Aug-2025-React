@@ -1,0 +1,27 @@
+#increment-button,#decrement-button{
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#increment-button:hover,#decrement-button:hover{
+    opacity: 0.8;
+    box-shadow: 1px 2px 0.8 gray;
+}
+
+#increment-button{
+    background-color: green;
+}
+
+#decrement-button{
+    background-color: red;
+}
+
+#display-counter{
+    font-size: 32px;
+}
