@@ -1,6 +1,7 @@
 import React from 'react'
 import './Button.css'
 
+// const Button = (props) => {
 const Button = ({handleClick,itpaugtext,cssClass}) => {
   return (
    <>
