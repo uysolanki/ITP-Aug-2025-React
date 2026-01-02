@@ -1,0 +1,11 @@
+ol{
+display: flex;
+justify-content: space-around ;
+list-style: none;
+background-color: yellow;
+}
+
+ol li:hover{
+background-color: pink;
+cursor: pointer;
+}

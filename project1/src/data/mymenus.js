@@ -1,0 +1,3 @@
+ const menus=["File","Edit","Selection","View","Go","Run","Terminal","Help"]
+ 
+ export default menus

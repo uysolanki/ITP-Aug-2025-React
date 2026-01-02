@@ -1,14 +1,11 @@
-import React from 'react'
-import Demo from './components/Demo'
-import Counter from './components/Counter'
-import Counter1 from './components/Counter1'
-import Counter2 from './components/Counter2'
-import Counter3 from './components/Counter3'
+import Navbar from './components/Navbar'
+import Navbar1 from './components/Navbar1'
+import Navbar2 from './components/Navbar2'
 
 const App = () => {
   return (
     <div>
-    <Counter3/>
+    <Navbar2/>
     </div>
   )
 }
