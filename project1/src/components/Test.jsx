@@ -3,6 +3,18 @@ import products from '../data/products.js'
 import './Test.css'
 const Test = () => {
     console.log(products)
+
+    let productCategories=products.map(
+        (product)=>(product.category)
+    )
+
+    console.log(productCategories)
+
+    let distinctCategories=new Set(productCategories)
+    console.log(distinctCategories)
+
+    let allCategories=[...distinctCategories,'All']
+    console.log(allCategories)
   return (
    <>
    <div className='parent-container'>
