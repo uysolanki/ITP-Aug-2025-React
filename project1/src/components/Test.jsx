@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import products from '../data/products.js'
 import './Test.css'
 import Navbar3 from './Navbar3.jsx'
+import Product from './Product.jsx'
 const Test = () => {
     console.log(products) //20
 
@@ -42,15 +43,16 @@ const Test = () => {
    <div className='parent-container'>
    {
     allProducts.map(
-        (prod,index)=>{
-            return <div key={index}className="card" style={{'width': '18rem'}}>
-            <img className="card-img-top" src={prod.image} alt="Card image cap"/>
-            <div className="card-body">
-            <h5 className="card-title">{prod.title}</h5>
-            <p className="card-text">{prod.description}</p>
-            <a href="#" className="btn btn-primary">Add To Cart</a>
-            </div>
-            </div>
+        (product,index)=>{
+            // return <div key={index}className="card" style={{'width': '18rem'}}>
+            // <img className="card-img-top" src={product.image} alt="Card image cap"/>
+            // <div className="card-body">
+            // <h5 className="card-title">{product.title}</h5>
+            // <p className="card-text">{product.description}</p>
+            // <a href="#" className="btn btn-primary">Add To Cart</a>
+            // </div>
+            // </div>
+            return <Product key={index} prod={product}/>
         }
     )
    }
