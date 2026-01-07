@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import products from '../data/products.js'
 import './Test.css'
+import Navbar3 from './Navbar3.jsx'
 const Test = () => {
-    console.log(products)
+    console.log(products) //20
+
+    const [allProducts,setAllProducts]=useState(products)
+    const [buAllProducts,setBuAllProducts]=useState(products)
 
     let productCategories=products.map(
         (product)=>(product.category)
@@ -15,11 +19,29 @@ const Test = () => {
 
     let allCategories=[...distinctCategories,'All']
     console.log(allCategories)
-  return (
+
+    function filterByCategory(selectedCateory)
+    {
+        console.log(selectedCateory)
+        if(selectedCateory!='All')
+        {
+        let filteredProductsByCategory=buAllProducts.filter(
+            (prod)=>(prod.category===selectedCateory)
+        )
+
+        setAllProducts(filteredProductsByCategory)
+        }
+        else
+        setAllProducts(buAllProducts)    
+
+    }
+
+   return (
    <>
+   <Navbar3 list={allCategories} handleClick={filterByCategory}/>
    <div className='parent-container'>
    {
-    products.map(
+    allProducts.map(
         (prod,index)=>{
             return <div key={index}className="card" style={{'width': '18rem'}}>
             <img className="card-img-top" src={prod.image} alt="Card image cap"/>
