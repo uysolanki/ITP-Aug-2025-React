@@ -3,12 +3,14 @@ import products from '../data/products.js'
 import './Test.css'
 import Navbar3 from './Navbar3.jsx'
 import Product from './Product.jsx'
+import Searchbar from './Searchbar.jsx'
+import PriceSlider from './PriceSlider.jsx'
 const Test = () => {
     console.log(products) //20
 
     const [allProducts,setAllProducts]=useState(products)
     const [buAllProducts,setBuAllProducts]=useState(products)
-
+    const [basePrice,setBasePrice]=useState(0)
     let productCategories=products.map(
         (product)=>(product.category)
     )
@@ -37,8 +39,38 @@ const Test = () => {
 
     }
 
+    function searchByTitle(event)
+    {
+        let searchText=event.target.value.toLowerCase();
+        console.log(searchText)
+        if(searchText.length!=0)
+        {
+        let searchedProducts=buAllProducts.filter(
+            (prod)=>(prod.title.toLowerCase().includes(searchText) || prod.description.toLowerCase().includes(searchText))
+        )
+         setAllProducts(searchedProducts) 
+        }
+        else
+        {
+        setAllProducts(buAllProducts) 
+        }
+
+    }
+
+    function filterByPrice(event)
+    {
+        let bp=parseFloat(event.target.value)
+        console.log(bp)
+        setBasePrice(bp)
+        let priceFilteredProducts=buAllProducts.filter(
+            (prod)=>(prod.price<=basePrice)
+        )
+        setAllProducts(priceFilteredProducts)
+    }
    return (
    <>
+   <Searchbar handleChange={searchByTitle}/>
+   <PriceSlider handleChange={filterByPrice}/><span>{basePrice}</span>
    <Navbar3 list={allCategories} handleClick={filterByCategory}/>
    <div className='parent-container'>
    {
