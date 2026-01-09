@@ -1,14 +1,28 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 const Menubar = () => {
-   
+   const list=["Homepage", "About Us", "Careers" ,"Products"]
+   const navigate=useNavigate()
+
+   function handleClick(value)
+   {
+    switch(value)
+            {
+                case "Homepage" : navigate("/"); break;
+                case "About Us" : navigate("/about"); break;
+                case "Careers" :  navigate("/career"); break;
+                case "Products" : navigate("/prod"); break;
+            }
+
+   }
   return (
    <>
         <ol>
-        <Link to="/">           <li>Homepage</li>           </Link>
-        <Link to="/about">      <li>About US</li>    </Link>
-        <Link to="/prod">       <li>ECommerce</li>      </Link>
-        <Link to="/career">     <li>Careers</li>         </Link>
+        {
+           list.map(
+            (item,index)=><li key={index} onClick={()=>handleClick(item)}>{item}</li>
+           ) 
+        }
         </ol>
 
 

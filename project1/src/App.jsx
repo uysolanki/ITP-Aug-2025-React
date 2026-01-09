@@ -4,6 +4,7 @@ import Menubar from './components/Menubar'
 import Homepage from './components/Homepage'
 import AboutUs from './components/AboutUs'
 import ShowProducts from './components/ShowProducts'
+import Menubar1 from './components/Menubar'
 const App = () => {
   return (
    <>
