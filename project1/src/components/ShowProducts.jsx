@@ -19,8 +19,8 @@ const ShowProducts = () => {
 
     async function loadDataFromServer() {
         try {
-            const apiproducts = await axios.get("http://localhost:8087/products/getAllProducts")
-            //const apiproducts = await axios.get("https://fakestoreapi.com/products")
+            //const apiproducts = await axios.get("http://localhost:8087/products/getAllProducts")
+            const apiproducts = await axios.get("https://fakestoreapi.com/products")
             console.log('API Products ',apiproducts)
             setAllProducts(apiproducts.data)
             setBuAllProducts(apiproducts.data)
