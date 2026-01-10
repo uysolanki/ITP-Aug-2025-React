@@ -1,6 +1,7 @@
 import React from 'react'
 import './BreadCrumbs.css'
 import {Link} from 'react-router-dom'
+import arrowImg1 from '../assets/myimages/Arrow.png'
 const BreadCrumbs = ({prod}) => {
     const arrowImg='/myimages/Arrow.png'
 
@@ -9,7 +10,7 @@ const BreadCrumbs = ({prod}) => {
    <Link to="/">HOME</Link>
    <img id="arrow-img" src={arrowImg} />
     <Link to="/prod">SHOP</Link>
-    <img id="arrow-img" src={arrowImg} />
+    <img id="arrow-img" src={arrowImg1} />
    {prod.category}
     <img id="arrow-img" src={arrowImg} />
    {prod.title}
