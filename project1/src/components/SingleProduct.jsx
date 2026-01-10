@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Product from './Product'
 import {Link} from 'react-router-dom'
+import BreadCrumbs from './BreadCrumbs'
 const SingleProduct = () => {
 
     const {productid}=useParams()
@@ -34,6 +35,7 @@ const SingleProduct = () => {
 
   return (
    <>
+   <BreadCrumbs prod={product}/>
    <Product prod={product} />
    <Link className="btn btn-secondary" to="/prod">       Back To Shopping      </Link>
    </>
