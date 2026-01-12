@@ -15,7 +15,7 @@ function UserContextProvider({children})
     let sharedData = { user, fruit, setUser, test};          //put all the data into an object
   return (
    
-   <UserContext.Provider value={sharedData}>		//assign the object u wish to share to the value attribute
+   <UserContext.Provider value={sharedData}>		
     {children}
    </UserContext.Provider>
   )

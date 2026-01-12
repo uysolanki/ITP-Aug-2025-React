@@ -1,11 +1,11 @@
-import Careers from './components/Careers'
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import Menubar from './components/Menubar'
-import Homepage from './components/Homepage'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import AboutUs from './components/AboutUs'
-import ShowProducts from './components/ShowProducts'
-import Menubar1 from './components/Menubar'
+import Careers from './components/Careers'
+import Homepage from './components/Homepage'
+import Menubar from './components/Menubar'
+import ShowProducts1 from './components/ShowProducts1'
 import SingleProduct from './components/SingleProduct'
+import SingleProduct1 from './components/SingleProduct1'
 const App = () => {
   return (
    <>
@@ -15,8 +15,8 @@ const App = () => {
             <Route path="/" element={<Homepage />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/career" element={<Careers />} />
-            <Route path="/prod" element={<ShowProducts />} />
-            <Route path="/single/:productid" element={<SingleProduct />} />
+            <Route path="/prod" element={<ShowProducts1 />} />
+            <Route path="/single/:productid" element={<SingleProduct1 />} />
         </Routes>
     </Router>
    </>
