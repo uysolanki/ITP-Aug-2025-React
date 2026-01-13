@@ -7,15 +7,15 @@ const SingleProduct1 = () => {
 
     const {productid}=useParams()
     // console.log(productid)
-    const o1=useContext(ProductContext)
+    const {products}=useContext(ProductContext)
     const [product,setProduct]=useState({})
 
     useEffect(() => {
-    if (o1.products && productid) {
-    const sinPro = o1.products.find((pro) => pro.id == productid)
+    if (products && productid) {
+    const sinPro = products.find((pro) => pro.id == productid)
     setProduct(sinPro)
     }
-    }, [o1.products, productid])
+    }, [products, productid])
 
 if (!product) {
   return <h1>Product Loading.....</h1>

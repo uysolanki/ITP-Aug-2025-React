@@ -27,7 +27,10 @@ function ProductContextProvider({children})
 
     }
 
-    let sharedData = {products};          
+    let fruit="Apple"
+    let car="Audi"
+
+    let sharedData = {products,fruit,car};          
   return (
    
    <ProductContext.Provider value={sharedData}>		
