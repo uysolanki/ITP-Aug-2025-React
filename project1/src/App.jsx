@@ -1,11 +1,9 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
-import AboutUs from './components/AboutUs'
+import AddProduct from './components/AddProduct'
 import Careers from './components/Careers'
 import Homepage from './components/Homepage'
 import Menubar from './components/Menubar'
 import ShowProducts1 from './components/ShowProducts1'
-import SingleProduct from './components/SingleProduct'
-import SingleProduct1 from './components/SingleProduct1'
 import SingleProduct2 from './components/SingleProduct2'
 const App = () => {
   return (
@@ -14,7 +12,7 @@ const App = () => {
       <Menubar/>
         <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/about" element={<AboutUs />} />
+            <Route path="/add" element={<AddProduct />} />
             <Route path="/career" element={<Careers />} />
             <Route path="/prod" element={<ShowProducts1 />} />
             <Route path="/single/:productid" element={<SingleProduct2 />} />

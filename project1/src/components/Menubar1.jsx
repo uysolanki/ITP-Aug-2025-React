@@ -6,7 +6,7 @@ const Menubar1 = () => {
    <>
         <ol>
         <Link to="/">           <li>Homepage</li>           </Link>
-        <Link to="/about">      <li>About US</li>    </Link>
+        <Link to="/about">      <li>Add Product</li>    </Link>
         <Link to="/prod">       <li>ECommerce</li>      </Link>
         <Link to="/career">     <li>Careers</li>         </Link>
         </ol>
