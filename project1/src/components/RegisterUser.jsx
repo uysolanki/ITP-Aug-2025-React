@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import './RegisterUser.css'
+import { useNavigate } from 'react-router-dom';
 
 const RegisterUser = () => {
 
+    const navigate = useNavigate();
+    
     const u1 = {
         username: "",
         password: "",
@@ -16,9 +19,35 @@ const RegisterUser = () => {
         setUser((prev) => ({ ...prev, [name]: value }));
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault()
-        console.log(user)
+        const payload={
+            username:user.username,
+            password:user.password
+        }
+
+        try {
+          const response = await fetch("http://localhost:8087/registerUser", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+    
+          if (response.ok) {
+            const data = await response.json();
+            //alert(data.sname + " " +" user registered successfully!");
+            alert("User Registration successful!");
+            navigate("/");
+            console.log(data);
+            //resetForm();
+          } else {
+            alert("Failed to Register User");
+          }
+        } catch (error) {
+          console.error("Error submitting the form", error);
+        }
     }
     return (
         <>

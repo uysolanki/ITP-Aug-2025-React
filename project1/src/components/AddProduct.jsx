@@ -4,7 +4,6 @@ import { useFormik } from 'formik';
 import {productValidationRules} from '../validation/ProductValidation'
 
 const AddProduct = () => {
-
     const p1 = {
     title: "",
     price: 0,
