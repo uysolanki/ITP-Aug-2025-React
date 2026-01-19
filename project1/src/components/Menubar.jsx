@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 const Menubar = () => {
-   const list=["Homepage", "Add Product", "Careers" ,"Products"]
+   const list=["Homepage", "Add Product", "Register" ,"Products"]
    const navigate=useNavigate()
 
    function handleClick(value)
@@ -10,7 +10,7 @@ const Menubar = () => {
             {
                 case "Homepage" : navigate("/"); break;
                 case "Add Product" : navigate("/add"); break;
-                case "Careers" :  navigate("/career"); break;
+                case "Register" :  navigate("/register"); break;
                 case "Products" : navigate("/prod"); break;
             }
 

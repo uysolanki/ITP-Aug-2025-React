@@ -46,40 +46,45 @@ const SingleProduct2 = () => {
       <BreadCrumbs prod={product} />
       <div className='productdisplay'>
         <div className="product-display-left">
-          <img src={product.image} alt={product.title} />
-        </div>
-
-        <div className="productdisplay-right-star">
-          {stars}
-          <p>({product?.rating?.count})</p>
-        </div>
-
-        <div className="productdisplay-right-prices">
-          <div className="productdisplay-right-price-old">
-            ₹{product.price}
-          </div>
-          <div className="productdisplay-right-price-new">
-            ₹{product.price}
+          <div className="product-display-img-list">
+            <img src={product.image} alt={product.title} />
           </div>
         </div>
-
-        <div className="productdisplay-right-description">
-          {product.description}
-        </div>
-
-        <div className="productdisplay-right-size">
-          <h1>Select Size</h1>
-          <div className="productdisplay-right-size-options">
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XXL</div>
+        <div className="product-display-right">
+          <h1>{product.title}</h1>
+          <div className="productdisplay-right-star">
+            <img src={star} alt="star" />
+            <img src={star} alt="star" />
+            <img src={star} alt="star" />
+            <img src={star} alt="star" />
+            <img src={star_dull} alt="star dull" />
+            <p>(3121)</p>
           </div>
-
-          <button>
-                    ADD TO CART
+          <div className="productdisplay-right-prices">
+            <div className="productdisplay-right-price-old">
+              ₹{product.price}
+            </div>
+            <div className="productdisplay-right-price-new">
+              ₹{product.price}
+            </div>
+          </div>
+          <div className="productdisplay-right-description">
+            {product.description}
+          </div>
+          <div className="productdisplay-right-size">
+            <h1>Select Size</h1>
+            <div className="productdisplay-right-size-options">
+              <div>S</div>
+              <div>M</div>
+              <div>L</div>
+              <div>XL</div>
+              <div>XXL</div>
+            </div>
+          </div>
+          <button onClick={() => { addToCart(product.id) }}>
+            ADD TO CART
           </button>
+          <p className='productdisplay-right-category'><span>Category :</span>{product.category}</p>
         </div>
 
       </div>
