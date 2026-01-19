@@ -2,10 +2,19 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { userValidationRules } from '../validation/UserValidationSchema';
 import './RegisterUser.css';
+import { useState } from 'react';
 const RegisterUser1 = () => {
 
+    const eyeImg='/myimages/eye.png'
+    const hideEyeImg='/myimages/hide_eye.png'
     const navigate = useNavigate();
     
+    const [toggle,setToggle]=useState(false)
+
+    function setPasswordVisibility()
+     {
+      setToggle(!toggle)
+     }
     const u1 = {
         username: "",
         password: "",
@@ -74,7 +83,7 @@ const RegisterUser1 = () => {
 
                 <div>
                 <input 
-                    type="text" 
+                    type={toggle ? "text" : "password"}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     name="password"
@@ -85,13 +94,26 @@ const RegisterUser1 = () => {
 
                 <div>
                 <input 
-                    type="text" 
+                    type={toggle ? "text" : "password"}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     name="confirmPassword"
                     value={values.confirmPassword}
                 />
                 {touched.confirmPassword && errors.confirmPassword && (<p className="text-danger">{errors.confirmPassword}</p>)}
+                </div>
+                <div>
+                  <button
+                  type="button"
+                  className='password-show-btn'
+                  onClick={setPasswordVisibility}
+                  >
+                    {
+                      toggle?<img src={eyeImg} /> : <img src={hideEyeImg} />
+                    }
+
+                  </button>
+
                 </div>
 
                 <input type="submit" value="Register"></input>
