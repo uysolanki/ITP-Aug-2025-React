@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import BreadCrumbs from './BreadCrumbs'
-import Product from './Product'
+import BreadCrumbs from '../components/BreadCrumbs'
+import Product from '../components/Product'
 import ProductContext from '../contexts/ProductContext'
 const SingleProduct1 = () => {
 

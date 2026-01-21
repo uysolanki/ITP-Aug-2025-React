@@ -1,13 +1,10 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import BreadCrumbs from './BreadCrumbs'
-import Product from './Product'
+import BreadCrumbs from '../components/BreadCrumbs'
+import Product from '../components/Product'
 import ProductContext from '../contexts/ProductContext'
-import './SingleProduct2.css'
-import star from '../assets/myimages/star.png';
-import star_dull from '../assets/myimages/star_dull.png';
-
-const SingleProduct2 = () => {
+import './SingleProduct3.css'
+const SingleProduct3 = () => {
 
   const { productid } = useParams()
   // console.log(productid)
@@ -25,21 +22,23 @@ const SingleProduct2 = () => {
     return <h1>Product Loading.....</h1>
   }
 
+  const star = '/myimages/star.png'
+  const star_dull = '/myimages/star_dull.png'
 
   const totalStars = 5;
   const rating = product?.rating?.rate || 0;
-  const filledStars = Math.round(rating);
-  const dullStars = totalStars - filledStars;
-
+  const filledStarsCount = Math.round(rating);
+  const dullStarsCount = totalStars - filledStarsCount;
   const stars = [];
 
-  for (let i = 0; i < filledStars; i++) {
+  for (let i = 0; i < filledStarsCount; i++) {
     stars.push(<img key={`f-${i}`} src={star} alt="star" />);
   }
 
-  for (let i = 0; i < dullStars; i++) {
+  for (let i = 0; i < dullStarsCount; i++) {
     stars.push(<img key={`d-${i}`} src={star_dull} alt="star dull" />);
   }
+
 
   return (
     <>
@@ -49,17 +48,17 @@ const SingleProduct2 = () => {
           <div className="product-display-img-list">
             <img src={product.image} alt={product.title} />
           </div>
+
         </div>
+
         <div className="product-display-right">
           <h1>{product.title}</h1>
+
           <div className="productdisplay-right-star">
-            <img src={star} alt="star" />
-            <img src={star} alt="star" />
-            <img src={star} alt="star" />
-            <img src={star} alt="star" />
-            <img src={star_dull} alt="star dull" />
-            <p>(3121)</p>
+            {stars}
+            <p>({product?.rating?.count})</p>
           </div>
+
           <div className="productdisplay-right-prices">
             <div className="productdisplay-right-price-old">
               ₹{product.price}
@@ -68,9 +67,11 @@ const SingleProduct2 = () => {
               ₹{product.price}
             </div>
           </div>
+
           <div className="productdisplay-right-description">
             {product.description}
           </div>
+
           <div className="productdisplay-right-size">
             <h1>Select Size</h1>
             <div className="productdisplay-right-size-options">
@@ -81,16 +82,19 @@ const SingleProduct2 = () => {
               <div>XXL</div>
             </div>
           </div>
-          <button onClick={() => { addToCart(product.id) }}>
+
+          <button>
             ADD TO CART
           </button>
-          <p className='productdisplay-right-category'><span>Category :</span>{product.category}</p>
+
+
         </div>
 
       </div>
+
       <Link className="btn btn-secondary" to="/prod">       Back To Shopping      </Link>
     </>
   )
 }
 
-export default SingleProduct2
+export default SingleProduct3

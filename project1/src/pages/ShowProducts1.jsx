@@ -1,36 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import './Test.css'
-import Navbar3 from './Navbar3.jsx'
-import Product from './Product.jsx'
-import Searchbar from './Searchbar.jsx'
-import PriceSlider from './PriceSlider.jsx'
-import axios from 'axios'
-const ShowProducts = () => {
+import { useContext, useState } from 'react'
+import ProductContext from '../contexts/ProductContext.js'
+import Navbar3 from '../components/Navbar3.jsx'
+import PriceSlider from '../components/PriceSlider.jsx'
+import Product from '../components/Product.jsx'
+import Searchbar from '../components/Searchbar.jsx'
+import '../components/Test.css'
+
+const ShowProducts1 = () => {
    
-    const [allProducts, setAllProducts] = useState([])
-    const [buAllProducts, setBuAllProducts] = useState([])
-    const [basePrice, setBasePrice] = useState(0)
-
-    useEffect(
-        () => {
-            loadDataFromServer();
-        }, []
-    )
-
-    async function loadDataFromServer() {
-        try {
-            //const apiproducts = await axios.get("http://localhost:8087/products/getAllProducts")
-            const apiproducts = await axios.get("https://fakestoreapi.com/products")
-            console.log('API Products ',apiproducts)
-            setAllProducts(apiproducts.data)
-            setBuAllProducts(apiproducts.data)
-            }
-        catch (error) {
-            console.log(error)
-        }
-
-    }
-    
+   const o1=useContext(ProductContext)
+   const [allProducts, setAllProducts] = useState(o1.products)
+   const [buAllProducts, setBuAllProducts] = useState(o1.products)
+   const [basePrice, setBasePrice] = useState(0)
+   
     let productCategories = buAllProducts.map(
         (product) => (product.category)
     )
@@ -107,4 +89,4 @@ const ShowProducts = () => {
     )
 }
 
-export default ShowProducts
+export default ShowProducts1

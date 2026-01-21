@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import Product from './Product'
+import Product from '../components/Product'
 import {Link} from 'react-router-dom'
-import BreadCrumbs from './BreadCrumbs'
+import BreadCrumbs from '../components/BreadCrumbs'
 const SingleProduct = () => {
 
     const {productid}=useParams()
