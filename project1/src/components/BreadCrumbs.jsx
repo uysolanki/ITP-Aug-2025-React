@@ -10,7 +10,7 @@ const BreadCrumbs = ({prod}) => {
    <Link to="/">HOME</Link>
    <img id="arrow-img" src={arrowImg} />
     <Link to="/prod">SHOP</Link>
-    <img id="arrow-img" src={arrowImg1} />
+   <img id="arrow-img" src={arrowImg1} />
    {prod.category}
     <img id="arrow-img" src={arrowImg} />
    {prod.title}

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useMemo, useState } from 'react'
 import ProductContext from '../contexts/ProductContext.js'
 import Navbar3 from '../components/Navbar3.jsx'
 import PriceSlider from '../components/PriceSlider.jsx'
@@ -13,17 +13,25 @@ const ShowProducts1 = () => {
    const [buAllProducts, setBuAllProducts] = useState(o1.products)
    const [basePrice, setBasePrice] = useState(0)
    
-    let productCategories = buAllProducts.map(
-        (product) => (product.category)
-    )
+    // let productCategories = buAllProducts.map(
+    //     (product) => (product.category)
+    // )   // 20 categories  jab tak 21st category add nahi hoti
 
-    console.log(productCategories)
+    // console.log(productCategories)
 
-    let distinctCategories = new Set(productCategories)
-    console.log(distinctCategories)
+    // let distinctCategories = new Set(productCategories)
+    // console.log(distinctCategories) //4 category
 
-    let allCategories = [...distinctCategories, 'All']
-    console.log(allCategories)
+    // let allCategories = [...distinctCategories, 'All']
+    // console.log(allCategories)      //5 category
+
+
+        const allCategories = useMemo(() => {
+        const categories = buAllProducts.map(p => p.category)
+        const uniqueCategories = new Set(categories)
+        return [...uniqueCategories, "All"]
+    }, [buAllProducts])
+
 
     function filterByCategory(selectedCateory) {
         console.log(selectedCateory)

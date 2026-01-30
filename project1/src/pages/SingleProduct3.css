@@ -104,3 +104,19 @@
     background-color: #000;
     color: #fff;
   }
+
+  button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #333;
+  }
+  
