@@ -5,6 +5,7 @@ import RegisterUser1 from './pages/RegisterUser1'
 import ShowProducts1 from './pages/ShowProducts1'
 import Menubar from './components/Menubar'
 import SingleProduct3 from './pages/SingleProduct3'
+import Test1 from './components/Test1'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/add" element={<AddProduct1 />} />
             <Route path="/register" element={<RegisterUser1 />} />
             <Route path="/prod" element={<ShowProducts1 />} />
+            <Route path="/test" element={<Test1 />} />
             <Route path="/single/:productid" element={<SingleProduct3 />} />
         </Routes>
     </Router>

@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import ProductContext from '../contexts/ProductContext.js'
 import Navbar3 from '../components/Navbar3.jsx'
 import PriceSlider from '../components/PriceSlider.jsx'
@@ -33,9 +33,22 @@ const ShowProducts1 = () => {
     }, [buAllProducts])
 
 
-    function filterByCategory(selectedCateory) {
-        console.log(selectedCateory)
-        if (selectedCateory != 'All') {
+    // function filterByCategory(selectedCateory) {
+    //     console.log(selectedCateory)
+    //     if (selectedCateory != 'All') {
+    //         let filteredProductsByCategory = buAllProducts.filter(
+    //             (prod) => (prod.category === selectedCateory)
+    //         )
+
+    //         setAllProducts(filteredProductsByCategory)
+    //     }
+    //     else
+    //         setAllProducts(buAllProducts)
+    // }
+
+   let filterByCategory= useCallback(
+        (selectedCateory)=>{
+            if (selectedCateory != 'All') {
             let filteredProductsByCategory = buAllProducts.filter(
                 (prod) => (prod.category === selectedCateory)
             )
@@ -45,7 +58,8 @@ const ShowProducts1 = () => {
         else
             setAllProducts(buAllProducts)
 
-    }
+        },[buAllProducts]
+    )
 
     function searchByTitle(event) {
         let searchText = event.target.value.toLowerCase();
